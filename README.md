@@ -23,4 +23,4 @@ Camera  | Dual 12 MP, f/2.2, phase detection autofocus, dual-LED (dual tone) fla
 
 ## Device picture
 
-![Xiaomi Mi A1](http://www.thundershoe.com/wp-content/uploads/2017/09/11-4.jpeg "Xiaomi Mi A1 All colors")
+![Xiaomi Mi A1](https://uf.cari.com.my/forumx/cforum/portal/201709/06/025830ac0c109sqa4q4ta7.png "Xiaomi Mi A1 All colors")
