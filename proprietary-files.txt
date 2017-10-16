@@ -1131,3 +1131,4 @@ vendor/lib/mediadrm/libwvdrmengine.so
 
 # Wi-Fi
 bin/wcnss_service
+lib/modules/qca_cld3_wlan.ko:lib/modules/wlan.ko
