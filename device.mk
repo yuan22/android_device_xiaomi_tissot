@@ -107,7 +107,20 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     camera.msm8953 \
     libmm-qcamera \
-    Snap
+    MiuiCamera
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/camera/camera_config.xml:system/etc/camera/camera_config.xml \
+    $(LOCAL_PATH)/configs/camera/ov12a10_arc_chromatix.xml:system/etc/camera/ov12a10_arc_chromatix.xml \
+    $(LOCAL_PATH)/configs/camera/ov12a10_arc_ofilm_chromatix.xml.xml:system/etc/camera/ov12a10_arc_ofilm_chromatix.xml \
+    $(LOCAL_PATH)/configs/camera/ov12a10_chromatix.xml:system/etc/camera/ov12a10_chromatix.xml \
+    $(LOCAL_PATH)/configs/camera/ov12a10_ofilm_chromatix.xml:system/etc/camera/ov12a10_ofilm_chromatix.xml \
+    $(LOCAL_PATH)/configs/camera/ov5675_qtech_chromatix.xml:system/etc/camera/ov5675_qtech_chromatix.xml \
+    $(LOCAL_PATH)/configs/camera/ov13880_arc_chromatix.xml:system/etc/camera/ov13880_arc_chromatix.xml \
+    $(LOCAL_PATH)/configs/camera/ov13880_arc_ofilm_chromatix.xml:system/etc/camera/ov13880_arc_ofilm_chromatix.xml \
+    $(LOCAL_PATH)/configs/camera/ov13880_chromatix.xml:system/etc/camera/ov13880_chromatix.xml \
+    $(LOCAL_PATH)/configs/camera/ov13880_ofilm_chromatix.xml:system/etc/camera/ov13880_ofilm_chromatix.xml \
+    $(LOCAL_PATH)/configs/camera/s5k5e8_ofilm_chromatix.xml:system/etc/camera/s5k5e8_ofilm_chromatix.xml \
 
 # Prebuilt
 PRODUCT_COPY_FILES += \
