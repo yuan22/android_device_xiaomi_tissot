@@ -3,7 +3,7 @@ Copyright (C) 2017 The LineageOS Project
 Device configuration for Xiaomi Mi A1
 =========================================
 
-The Xiaomi Mi A1 (codenamed _"Tissot"_) is a high-end smartphone from Xiaomi.
+The Xiaomi Mi A1 (codenamed _"Tissot"_) is a mid-end smartphone from Xiaomi.
 
 It was announced in October 2017. Release date was October 2017.
 
