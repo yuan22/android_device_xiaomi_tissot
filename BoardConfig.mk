@@ -58,7 +58,7 @@ TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8953
 TARGET_KERNEL_CONFIG := msm_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_BUILD_VARIANT := user
-TARGET_PREBUILT_KERNEL := device/xiaomi/sagit/prebuilt/kernel
+TARGET_PREBUILT_KERNEL := device/xiaomi/tissot/prebuilt/kernel
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8953
