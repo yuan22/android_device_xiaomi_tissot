@@ -1,27 +1,27 @@
-# ADSP
-bin/adsprpcd
-vendor/lib/libadsp_default_listener.so
-vendor/lib/libadsprpc.so
-vendor/lib/libfastcvadsp_stub.so
-vendor/lib/libfastcvopt.so
-vendor/lib64/libadsp_default_listener.so9
-vendor/lib64/libadsprpc.so
-vendor/lib64/libfastcvadsp_stub.so
-vendor/lib64/libfastcvopt.so
+# ADSP - from oxygen (MiMax 2)
+bin/adsprpcd|a937dd9d5eff2aa87acf87efe9b864bed9c670fd
+vendor/lib/libadsp_default_listener.so|b427880a95928cc66fb81405a898c39adb519ae1
+vendor/lib/libadsprpc.so|aa8dc277742a0f95de195b370b4db8771629e4d5
+vendor/lib/libfastcvadsp_stub.so|cbd9dba16c284505342b868969d1c165564e05f4
+vendor/lib/libfastcvopt.so|45362d5c44e35d848a220b07a6612ded3dfc99f4
+vendor/lib64/libadsp_default_listener.so|5ea03dfbddb3c92d0aa6f76eb0d90d44431776b9
+vendor/lib64/libadsprpc.so|e41f75dfd6fef685fcfca5e6489f71c2ab3e84ff
+vendor/lib64/libfastcvadsp_stub.so|bf2d4430c083599df81e10efc66bf446434235cc
+vendor/lib64/libfastcvopt.so|c7d53d4a904558705d35a3e1fc8e0c0d856a559e
 
 # ADSP modules - from oxygen (MiMax 2)
-vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so
-vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_skel.so
-vendor/lib/rfsa/adsp/libapps_mem_heap.so
-vendor/lib/rfsa/adsp/libdspCV_skel.so
-vendor/lib/rfsa/adsp/libfastcvadsp.so
-vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
-vendor/lib/rfsa/adsp/libobjectMattingApp_skel.so
-vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
-vendor/lib/rfsa/adsp/libscveCleverCapture_skel.so
-vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
-vendor/lib/rfsa/adsp/libscveT2T_skel.so
-vendor/lib/rfsa/adsp/libscveTextReco_skel.so
+vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so|b573056c2a9f5f9e1305c67a0661be229f1585cd
+vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_skel.so|71d54dfdb3465db53493a4b850b331b82cec6a1d
+vendor/lib/rfsa/adsp/libapps_mem_heap.so|5c82ad9cfe3f30105d899e2a4e90cc7566f81252
+vendor/lib/rfsa/adsp/libdspCV_skel.so|97dcaa2b83ac3beddd69f7bcffaf5f02d26a47af
+vendor/lib/rfsa/adsp/libfastcvadsp.so|9818625bfa018f517e32a8f4a1e7fb4b255e5049
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so|1ff4a48009e88435d93fd2b9b0c5ea59cedbb4f7
+vendor/lib/rfsa/adsp/libobjectMattingApp_skel.so|44876343c47bf533c7ccc781becbbdb19e325a60
+vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so|3e9c52069ff07e50191d3b3afb33b30409241ab6
+vendor/lib/rfsa/adsp/libscveCleverCapture_skel.so|849fdadd2b50ac8be2b26d27cc5c8b8512e4a29f
+vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so|944169db3ac67056b92ef4f850f69346958370b5
+vendor/lib/rfsa/adsp/libscveT2T_skel.so|91b9200dbb982abf0d6b440668252d892a616f66
+vendor/lib/rfsa/adsp/libscveTextReco_skel.so|47ab455c11a7e8391ad768a9e21c9c60ab0d421b
 
 # Audio
 etc/drc/drc_cfg_5.1.txt
@@ -69,26 +69,26 @@ etc/acdbdata/QRD/QRD_Hdmi_cal.acdb
 etc/acdbdata/QRD/QRD_Headset_cal.acdb
 etc/acdbdata/QRD/QRD_Speaker_cal.acdb
 
-# Bluetooth
-bin/btnvtool
-bin/hci_qcomm_init
-bin/wcnss_filter
-vendor/lib/libbtnv.so
-vendor/lib64/libbtnv.so
+# Bluetooth - from oxygen (MiMax 2)
+bin/btnvtool|a10f51f756d661342b29c70bd9da8c79bfb4c8b1
+bin/hci_qcomm_init|3f4b99cb6ee44e688916eee413d3c15f78d03a87
+bin/wcnss_filter|dc151b5fbf9bca3d807ec4ba0e256b0e5140fe39
+vendor/lib/libbtnv.so|026c66a94493fc784503784963fa1f2c8807802d
+vendor/lib64/libbtnv.so|d10d3351bfd946b1276b9735e569c6f1a795401d
 
-# Bluetooth firmware
-etc/firmware/nvm_tlv.bin
-etc/firmware/nvm_tlv_1.3.bin
-etc/firmware/nvm_tlv_2.1.bin
-etc/firmware/nvm_tlv_3.0.bin
-etc/firmware/nvm_tlv_3.2.bin
-etc/firmware/rampatch_tlv.img
-etc/firmware/rampatch_tlv_1.3.tlv
-etc/firmware/rampatch_tlv_2.1.tlv
-etc/firmware/rampatch_tlv_3.0.tlv
-etc/firmware/rampatch_tlv_3.2.tlv
+# Bluetooth firmware - from oxygen (MiMax 2)
+etc/firmware/nvm_tlv.bin|78d937d7939300be7a23d9281cf082827697d4c2
+etc/firmware/nvm_tlv_1.3.bin|a5856eaf0ef9537772f1f07a287d4bc666483728
+etc/firmware/nvm_tlv_2.1.bin|c4dddea2ae08f625feb0fc5c75137dec0a58e46d
+etc/firmware/nvm_tlv_3.0.bin|d527cfa764514c60588753c3f637a266d96a4f8c
+etc/firmware/nvm_tlv_3.2.bin|fb0c1c079d019957fe4ac07f52cd8e5e9c02b030
+etc/firmware/rampatch_tlv.img|0503c6452f9eb843c751d107feed370de8a75f71
+etc/firmware/rampatch_tlv_1.3.tlv|1da2a06f5dc5d8d2489c35a695a6c3db6575110b
+etc/firmware/rampatch_tlv_2.1.tlv|3f7e5271b40e581af603bb1093ccb2b058c83e82
+etc/firmware/rampatch_tlv_3.0.tlv|5f8120ea99ec8462f5ee21a29e0b290a031524c0
+etc/firmware/rampatch_tlv_3.2.tlv|1c934123b0571803cb3404a0d884fdf97241d0cb
 
-# CNE
+# CNE - from oxygen (MiMax 2)
 -priv-app/CNEService/CNEService.apk|fd70751e25d26b22a885e5d6599bf04ba3fe705e
 bin/cnd|38538ec894c0d4e3dcb9f950ba4870acb299dcc7
 etc/cne/SwimConfig.xml|68dedcca1c2ac18cf81fdee1854de16a3a60dd02
@@ -1131,4 +1131,3 @@ vendor/lib/mediadrm/libwvdrmengine.so
 
 # Wi-Fi
 bin/wcnss_service
-lib/modules/qca_cld3_wlan.ko:lib/modules/wlan.ko
