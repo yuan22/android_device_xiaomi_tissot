@@ -61,6 +61,23 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 
+# A/B updater updatable partitions list. Keep in sync with the partition list
+# with "_a" and "_b" variants in the device. Note that the vendor can add more
+# more partitions to this list for the bootloader and radio.
+AB_OTA_PARTITIONS := \
+  boot \
+  system
+
+# A/B OTA dexopt update_engine hookup
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_system=true \
+    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
+    FILESYSTEM_TYPE_system=ext4 \
+    POSTINSTALL_OPTIONAL_system=true
+
+# A/B OTA dexopt package
+PRODUCT_PACKAGES += otapreopt_script
+
 # Audio
 PRODUCT_PACKAGES += \
     audiod \
@@ -90,6 +107,12 @@ PRODUCT_COPY_FILES += \
 	$(TOPDIR)frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:/system/etc/r_submix_audio_policy_configuration.xml \
 	$(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:/system/etc/usb_audio_policy_configuration.xml
 
+# Use the A/B updater.
+AB_OTA_UPDATER := true
+PRODUCT_PACKAGES += \
+  update_engine \
+  update_verifier
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService \
@@ -103,6 +126,21 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libbthost_if
 
+# Bootloader HAL used for A/B updates.
+PRODUCT_PACKAGES += \
+    bootctrl
+PRODUCT_PACKAGES_DEBUG += \
+    bootctl
+
+# Enable update engine sideloading by including the static version of the
+# boot_control HAL and its dependencies.
+PRODUCT_STATIC_BOOT_CONTROL_HAL := \
+    bootctrl.msm8953 \
+    librecovery_updater_msm8953 \
+    libsparse_static
+PRODUCT_PACKAGES += \
+    update_engine_sideload
+
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8953 \
@@ -112,7 +150,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/camera_config.xml:system/etc/camera/camera_config.xml \
     $(LOCAL_PATH)/configs/camera/ov12a10_arc_chromatix.xml:system/etc/camera/ov12a10_arc_chromatix.xml \
-    $(LOCAL_PATH)/configs/camera/ov12a10_arc_ofilm_chromatix.xml.xml:system/etc/camera/ov12a10_arc_ofilm_chromatix.xml \
+    $(LOCAL_PATH)/configs/camera/ov12a10_arc_ofilm_chromatix.xml:system/etc/camera/ov12a10_arc_ofilm_chromatix.xml \
     $(LOCAL_PATH)/configs/camera/ov12a10_chromatix.xml:system/etc/camera/ov12a10_chromatix.xml \
     $(LOCAL_PATH)/configs/camera/ov12a10_ofilm_chromatix.xml:system/etc/camera/ov12a10_ofilm_chromatix.xml \
     $(LOCAL_PATH)/configs/camera/ov5675_qtech_chromatix.xml:system/etc/camera/ov5675_qtech_chromatix.xml \
@@ -124,7 +162,7 @@ PRODUCT_COPY_FILES += \
 
 # Prebuilt
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/xiaomi/sagit/prebuilt/system,system)
+    $(call find-copy-subdir-files,*,device/xiaomi/tissot/prebuilt/system,system)
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
@@ -242,11 +280,11 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.sh \
     init.target.rc \
     init.qcom.early_boot.sh \
-    ueventd.qcom.rc
+    ueventd.qcom.rc \
+    init.recovery.qcom.rc \
+    recovery.fstab:etc/recovery.fstab
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/bin/init.qti.qseecomd.sh:system/bin/init.qti.qseecomd.sh \
-    $(LOCAL_PATH)/rootdir/etc/init.panel_info.sh:system/etc/init.panel_info.sh \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.audio.sh:system/etc/init.qcom.audio.sh \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.bt.sh:system/etc/init.qcom.bt.sh \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.efs.sync.sh:system/etc/init.qcom.efs.sync.sh \
@@ -254,14 +292,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.uicc.sh:system/etc/init.qcom.uicc.sh
-
-# Recovery
-PRODUCT_PACKAGES += \
-    librecovery_updater_tissot
-
-# Releasetools
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fbe_check.sh:install/bin/fbe_check.sh
 
 # RIL
 PRODUCT_PACKAGES += \

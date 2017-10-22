@@ -107,7 +107,7 @@
 #define EXIF_IMAGE_DESCRIPTION_SIZE 100
 
 #define MAX_INFLIGHT_REQUESTS  6
-#define MAX_INFLIGHT_BLOB      10
+#define MAX_INFLIGHT_BLOB      3
 #define MIN_INFLIGHT_REQUESTS  3
 #define MIN_INFLIGHT_60FPS_REQUESTS (6)
 #define MAX_INFLIGHT_REPROCESS_REQUESTS 1
@@ -144,9 +144,6 @@
 
 /* Defines the number of columns in the color correction matrix (CCM) */
 #define AWB_NUM_CCM_COLS (3)
-
-/* Index to switch H/W to consume to free-run Q*/
-#define CAM_FREERUN_IDX 0xFFFFFFFF
 
 typedef uint64_t cam_feature_mask_t;
 
@@ -1476,7 +1473,9 @@ typedef struct {
 typedef struct {
   cam_auto_scene_t      detected_scene;
   uint8_t               max_n_scenes;
-  cam_asd_scene_info_t  scene_info[S_MAX];
+//  xiaomi added 48 custom auto scenes or some other field with total size of 576 bytes
+  cam_asd_scene_info_t  scene_info[S_MAX+48];
+//  volatile char         xiaomi_reserved1[576];
 } cam_asd_decision_t;
 
 
@@ -1701,13 +1700,8 @@ typedef struct {
 } cam_hw_data_overwrite_t;
 
 typedef struct {
-    uint32_t streamID;
-    uint32_t buf_index;
-} cam_stream_request_t;
-
-typedef struct {
     uint32_t num_streams;
-    cam_stream_request_t stream_request[MAX_NUM_STREAMS];
+    uint32_t streamID[MAX_NUM_STREAMS];
 } cam_stream_ID_t;
 
 /*CAC Message posted during pipeline*/
@@ -2232,8 +2226,6 @@ typedef enum {
     CAM_INTF_META_FOCUS_VALUE,
     /*Spot light detection result output from af core*/
     CAM_INTF_META_SPOT_LIGHT_DETECT,
-    /* HAL based HDR*/
-    CAM_INTF_PARM_HAL_BRACKETING_HDR,
     CAM_INTF_PARM_MAX
 } cam_intf_parm_type_t;
 

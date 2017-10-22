@@ -14000,9 +14000,7 @@ int32_t QCameraParameters::updatePpFeatureMask(cam_stream_type_t stream_type) {
         }
         break;
     case CAM_FILTER_ARRANGEMENT_Y:
-        if ((stream_type == CAM_STREAM_TYPE_ANALYSIS) ||
-                (stream_type == CAM_STREAM_TYPE_PREVIEW) ||
-                (stream_type == CAM_STREAM_TYPE_VIDEO)) {
+        if (stream_type == CAM_STREAM_TYPE_ANALYSIS) {
             feature_mask |= CAM_QCOM_FEATURE_PAAF;
             LOGH("add PAAF mask to feature_mask for mono device");
         }
