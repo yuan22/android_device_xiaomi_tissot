@@ -138,8 +138,6 @@ PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     bootctrl.msm8953 \
     librecovery_updater_msm8953 \
     libsparse_static
-PRODUCT_PACKAGES += \
-    update_engine_sideload
 
 # Camera
 PRODUCT_PACKAGES += \
