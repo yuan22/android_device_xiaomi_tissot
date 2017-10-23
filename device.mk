@@ -279,8 +279,7 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     init.qcom.early_boot.sh \
     ueventd.qcom.rc \
-    init.recovery.qcom.rc \
-    recovery.fstab:etc/recovery.fstab
+    init.recovery.qcom.rc 
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.audio.sh:system/etc/init.qcom.audio.sh \
@@ -289,7 +288,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.fm.sh:system/etc/init.qcom.fm.sh \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh \
-    $(LOCAL_PATH)/rootdir/etc/init.qcom.uicc.sh:system/etc/init.qcom.uicc.sh
+    $(LOCAL_PATH)/rootdir/etc/init.qcom.uicc.sh:system/etc/init.qcom.uicc.sh \
+    $(LOCAL_PATH)/recovery.fstab:recovery/root/etc/recovery.fstab 
 
 # RIL
 PRODUCT_PACKAGES += \
