@@ -279,7 +279,8 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     init.qcom.early_boot.sh \
     ueventd.qcom.rc \
-    init.recovery.qcom.rc 
+    init.recovery.qcom.rc \
+    charger.fstab.qcom
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.audio.sh:system/etc/init.qcom.audio.sh \
