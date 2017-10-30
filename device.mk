@@ -198,9 +198,9 @@ PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni
 
-# For android_filesystem_config.h
+# Gatekeeper HAL
 PRODUCT_PACKAGES += \
-    fs_config_files
+    android.hardware.gatekeeper@1.0-impl
 
 # GPS
 PRODUCT_PACKAGES += \
