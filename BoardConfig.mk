@@ -51,7 +51,6 @@ TARGET_BOOTLOADER_BOARD_NAME := msm8953
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG_MK   := $(DEVICE_PATH)/mkbootimg.mk
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78af000 buildvariant=userdebug
 BOARD_KERNEL_BASE         := 0x80000000
 BOARD_KERNEL_IMAGE_NAME   := Image.gz-dtb
@@ -62,7 +61,6 @@ TARGET_KERNEL_ARCH        := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE      := kernel/xiaomi/msm8953
 TARGET_KERNEL_CONFIG      := mido_defconfig
-TARGET_PREBUILT_KERNEL    := device/xiaomi/tissot/prebuilt/kernel
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_BUILD_VARIANT := user
 

@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+PRODUCT_SHIPPING_API_LEVEL := 25
+
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/xiaomi/tissot/tissot-vendor.mk)
 
@@ -64,6 +66,9 @@ TARGET_SCREEN_WIDTH := 1080
 # A/B updater updatable partitions list. Keep in sync with the partition list
 # with "_a" and "_b" variants in the device. Note that the vendor can add more
 # more partitions to this list for the bootloader and radio.
+PRODUCT_PACKAGES_DEBUG += \
+  update_engine_client
+
 AB_OTA_PARTITIONS := \
   boot \
   system
@@ -138,6 +143,9 @@ PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     bootctrl.msm8953 \
     librecovery_updater_msm8953 \
     libsparse_static
+PRODUCT_PACKAGES += \
+    update_engine_sideload
+
 
 # Camera
 PRODUCT_PACKAGES += \
