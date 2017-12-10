@@ -133,7 +133,7 @@ PRODUCT_PACKAGES += \
 
 # Bootloader HAL used for A/B updates.
 PRODUCT_PACKAGES += \
-    bootctrl
+    bootctrl.msm8953
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
@@ -145,7 +145,6 @@ PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     libsparse_static
 PRODUCT_PACKAGES += \
     update_engine_sideload
-
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -297,8 +296,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.fm.sh:system/etc/init.qcom.fm.sh \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh \
-    $(LOCAL_PATH)/rootdir/etc/init.qcom.uicc.sh:system/etc/init.qcom.uicc.sh \
-    $(LOCAL_PATH)/recovery.fstab:recovery/root/etc/recovery.fstab 
+    $(LOCAL_PATH)/rootdir/etc/init.qcom.uicc.sh:system/etc/init.qcom.uicc.sh 
 
 # RIL
 PRODUCT_PACKAGES += \
