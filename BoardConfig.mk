@@ -204,7 +204,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 # Releasetools
 #TARGET_RECOVERY_UI_LIB := librecovery_ui_msm
 TARGET_RECOVERY_UI_LIB := librecovery_ui_nanohub
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_$(TARGET_BOARD_PLATFORM)
+#TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_$(TARGET_BOARD_PLATFORM)
 
 # RIL
 PROTOBUF_SUPPORTED := true
