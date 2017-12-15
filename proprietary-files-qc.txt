@@ -1,8 +1,6 @@
 # ADSP
 vendor/bin/adsprpcd
 vendor/lib/libadsp_default_listener.so
-vendor/lib/libadsp_hvx_callback_skel.so
-vendor/lib/libadsp_hvx_stub.so
 vendor/lib/libadsprpc.so
 -vendor/lib/libaudio_log_utils.so
 vendor/lib/libfastcvadsp_stub.so
@@ -15,21 +13,15 @@ vendor/lib64/libfastcvadsp_stub.so
 vendor/lib64/libqtigef.so
 
 # ADSP modules
-vendor/lib/rfsa/adsp/libadsp_fd_skel.so
-vendor/lib/rfsa/adsp/libadsp_hvx_add_constant.so
-vendor/lib/rfsa/adsp/libadsp_hvx_skel.so
-vendor/lib/rfsa/adsp/libadsp_hvx_stats.so
-vendor/lib/rfsa/adsp/libadsp_hvx_zzhdr_BGGR.so
-vendor/lib/rfsa/adsp/libadsp_hvx_zzhdr_RGGB.so
-vendor/lib/rfsa/adsp/libapps_mem_heap.so
-vendor/lib/rfsa/adsp/libdspCV_skel.so
+vendor/lib/rfsa/adsp/libapps_mem_heap.so      
+vendor/lib/rfsa/adsp/libdspCV_skel.so         
+vendor/lib/rfsa/adsp/libexternal_dog_skel.so  
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so    
 vendor/lib/rfsa/adsp/libfastcvadsp.so
-vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
+vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so
+vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_Qtc2_skel.so
 vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
-vendor/lib/rfsa/adsp/libvpp_frc.so
-vendor/lib/rfsa/adsp/libvpp_svc_skel.so
-vendor/lib/rfsa/adsp/us-syncproximity.so
 
 # Audio
 lib/libqct_resampler.so
@@ -70,8 +62,10 @@ vendor/lib64/libbtnv.so
 
 # CNE
 etc/permissions/com.quicinc.cne.xml
+-framework/cneapiclient.jar
 -framework/com.quicinc.cne.api-V1.0-java.jar
 -framework/com.quicinc.cne.jar
+-priv-app/CNEService/CNEService.apk
 vendor/bin/cnd
 vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml
 vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml
@@ -116,6 +110,27 @@ vendor/lib64/libxml.so
 # Charger
 vendor/bin/hvdcp_opti
 
+# DPM
+bin/dpmd
+etc/dpm/dpm.conf
+etc/dpm/nsrm/NsrmConfiguration.xml
+etc/permissions/com.qti.dpmframework.xml
+etc/permissions/dpmapi.xml
+framework/com.qti.dpmframework.jar
+framework/dpmapi.jar
+framework/tcmclient.jar
+-priv-app/dpmserviceapp/dpmserviceapp.apk
+lib64/libdpmctmgr.so
+lib64/libdpmfdmgr.so
+lib64/libdpmframework.so
+lib64/libdpmnsrm.so
+lib64/libdpmtcm.so
+lib/libdpmctmgr.so
+lib/libdpmfdmgr.so
+lib/libdpmframework.so
+lib/libdpmnsrm.so
+lib/libdpmtcm.so
+
 # DRM
 vendor/bin/qseecomd
 vendor/lib/libQSEEComAPI.so
@@ -124,7 +139,6 @@ vendor/lib/libcppf.so
 vendor/lib/libqisl.so
 vendor/lib/librpmb.so
 vendor/lib/libssd.so
-vendor/lib64/lib-sec-disp.so
 vendor/lib64/libGPreqcancel.so
 vendor/lib64/libGPreqcancel_svc.so
 vendor/lib64/libQSEEComAPI.so
@@ -143,6 +157,11 @@ vendor/lib/hw/gatekeeper.msm8996.so:vendor/lib/hw/gatekeeper.msm8953.so
 vendor/lib64/hw/gatekeeper.msm8996.so:vendor/lib64/hw/gatekeeper.msm8953.so
 
 # GPS
+-priv-app/com.qualcomm.location/com.qualcomm.location.apk
+etc/permissions/com.qualcomm.location.xml
+etc/permissions/com.qti.location.sdk.xml
+framework/com.qti.location.sdk.jar
+framework/izat.xt.srv.jar
 lib/vendor.qti.gnss@1.0.so
 lib64/vendor.qti.gnss@1.0.so
 vendor/bin/hw/vendor.qti.gnss@1.0-service
@@ -150,6 +169,8 @@ vendor/bin/loc_launcher
 vendor/bin/slim_daemon
 vendor/bin/xtra-daemon
 vendor/etc/init/vendor.qti.gnss@1.0-service.rc
+vendor/etc/cacert_location.pem
+vendor/etc/xtra_root_cert.pem
 vendor/lib/hw/vendor.qti.gnss@1.0-impl.so
 vendor/lib/vendor.qti.gnss@1.0_vendor.so
 vendor/lib64/hw/vendor.qti.gnss@1.0-impl.so
@@ -204,7 +225,7 @@ vendor/lib/libmm-qdcm.so
 vendor/lib/librs_adreno.so
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/libscalar.so
-vendor/lib/libsd_sdk_display.so
+lib/libsd_sdk_display.so
 vendor/lib/libsdm-color.so
 vendor/lib/libsdm-diag.so
 -vendor/lib/libsdm-disp-vndapis.so
@@ -236,13 +257,12 @@ vendor/lib64/libmm-qdcm.so
 vendor/lib64/librs_adreno.so
 vendor/lib64/librs_adreno_sha1.so
 vendor/lib64/libscalar.so
-vendor/lib64/libsd_sdk_display.so
+lib64/libsd_sdk_display.so
 vendor/lib64/libsdm-color.so
 vendor/lib64/libsdm-diag.so
 -vendor/lib64/libsdm-disp-vndapis.so
 vendor/lib64/libsdmextension.so
 vendor/lib64/libtinyxml2_1.so
-vendor/lib64/libuiblur.so|4b3fabf5ded7c4af531abde681676fc5e9248494
 
 # Ipacm
 vendor/bin/ipacm-diag
@@ -272,7 +292,6 @@ vendor/lib/libOmxVpp.so
 vendor/lib/libOmxWmaDec.so
 -vendor/lib/libgpustats.so
 vendor/lib/libmm-color-convertor.so
-vendor/lib/libvpphvx.so
 vendor/lib/libvpplibrary.so
 vendor/lib/libvqzip.so
 vendor/lib64/libI420colorconvert.so
@@ -289,7 +308,6 @@ vendor/lib64/libOmxVpp.so
 vendor/lib64/libOmxWmaDec.so
 -vendor/lib64/libgpustats.so
 vendor/lib64/libmm-color-convertor.so
-vendor/lib64/libvpphvx.so
 vendor/lib64/libvpplibrary.so
 
 # Modem
@@ -307,13 +325,8 @@ vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
 vendor/bin/msm_irqbalance
 vendor/etc/init/vendor.qti.hardware.iop@1.0-service.rc
 vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
-vendor/etc/perf/perf-profile0.conf
-vendor/etc/perf/perf-profile1.conf
-vendor/etc/perf/perf-profile2.conf
-vendor/etc/perf/perf-profile3.conf
-vendor/etc/perf/perf-profile4.conf
-vendor/etc/perf/perf-profile5.conf
-vendor/etc/perf/perf-profile6.conf
+vendor/etc/perf/gamedwhitelist.xml
+vendor/etc/perf/perfboostsconfig.xml
 vendor/lib/hw/vendor.qti.hardware.iop@1.0-impl.so
 vendor/lib/libperfgluelayer.so
 vendor/lib/libqti-iopd-client.so
@@ -380,15 +393,12 @@ vendor/lib64/libsmemlog.so
 # Radio
 -app/SimSettings/SimSettings.apk
 -app/QtiTelephonyService/QtiTelephonyService.apk
-etc/permissions/qcnvitems.xml
 etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
 -framework/QtiTelephonyServicelibrary.jar
--framework/qcnvitems.jar
 -framework/qcrilhook.jar
 -framework/qti-telephony-common.jar
 -framework/telephony-ext.jar
-lib64/libparam.so
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/hw/rild
 vendor/bin/ipacm-diag
@@ -440,7 +450,6 @@ etc/permissions/qti-vzw-ims-internal.xml
 lib/com.qualcomm.qti.imscmservice@1.0.so
 lib/lib-imscamera.so
 lib/lib-imsvideocodec.so
-lib/lib-imsvt.so
 lib/lib-imsvtextutils.so
 lib/lib-imsvtutils.so
 lib/libdiag_system.so
@@ -491,13 +500,11 @@ vendor/bin/sensors.qcom
 vendor/lib/hw/activity_recognition.msm8996.so:vendor/lib/hw/activity_recognition.msm8953.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
-vendor/lib/libsensor_thresh.so
 vendor/lib/libsensor_user_cal.so
 vendor/lib/sensors.ssc.so
 vendor/lib64/hw/activity_recognition.msm8996.so:vendor/lib64/hw/activity_recognition.msm8953.so
 vendor/lib64/libsensor1.so
 vendor/lib64/libsensor_reg.so
-vendor/lib64/libsensor_thresh.so
 vendor/lib64/libsensor_user_cal.so
 vendor/lib64/sensors.ssc.so
 
@@ -512,11 +519,7 @@ vendor/lib64/libthermalioctl.so
 -vendor/app/TimeService/TimeService.apk
 vendor/bin/time_daemon
 -vendor/lib/libtime_genoff.so
-vendor/lib/libTimeService.so
 -vendor/lib64/libtime_genoff.so
-vendor/lib64/libTimeService.so
 
 # Widevine
-vendor/lib/libWVStreamControlAPI_L3.so
-vendor/lib/libwvdrm_L3.so
 vendor/lib/mediadrm/libwvdrmengine.so 
