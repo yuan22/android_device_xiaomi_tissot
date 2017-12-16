@@ -1023,7 +1023,6 @@
     <path name="incall_music_uplink2 usb-headphones">
         <path name="incall_music_uplink2" />
     </path>
-
     <path name="volte-call">
         <ctl name="PRI_MI2S_RX_Voice Mixer VoLTE" value="1" />
         <ctl name="VoLTE_Tx Mixer TERT_MI2S_TX_VoLTE" value="1" />
@@ -1212,7 +1211,7 @@
         <ctl name="RDAC2 MUX" value="RX2" />
         <ctl name="HPHL" value="Switch" />
         <ctl name="HPHR" value="Switch" />
-	<ctl name="Ext Spk Switch" value="On" />
+        <ctl name="Ext Spk Switch" value="On" />
     </path>
 
     <path name="headset-mic">
@@ -1240,10 +1239,12 @@
     </path>
 
     <path name="sidetone-headphones">
+        <!--
         <path name="sidetone-iir" />
         <ctl name="RX1 MIX2 INP1" value="IIR1" />
         <ctl name="RX2 MIX2 INP1" value="IIR1" />
         <ctl name="IIR1 INP1 Volume" value="53" />
+        -->
     </path>
 
 
