@@ -244,5 +244,7 @@ TARGET_USES_QCOM_WCNSS_QMI := true
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
+ALLOW_MISSING_DEPENDENCIES=true
+
 # inherit from the proprietary version
 -include vendor/xiaomi/tissot/BoardConfigVendor.mk
