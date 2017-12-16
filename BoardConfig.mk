@@ -217,10 +217,6 @@ BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
 # Sensors
 USE_SENSOR_MULTI_HAL := true
 
-# Vendor init
-TARGET_INIT_VENDOR_LIB := libinit_tissot
-TARGET_RECOVERY_DEVICE_MODULES := libinit_tissot
-
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
 BOARD_HAS_QCOM_WLAN_SDK := true
