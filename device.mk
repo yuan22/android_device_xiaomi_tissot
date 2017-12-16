@@ -162,8 +162,8 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.msm8953 \
-    libmm-qcamera \
+    android.hardware.camera.provider@2.4-impl \
+    camera.device@3.2-impl \
     MiuiCamera
 
 PRODUCT_COPY_FILES += \
