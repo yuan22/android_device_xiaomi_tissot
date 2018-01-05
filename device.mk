@@ -304,6 +304,10 @@ PRODUCT_PACKAGES += \
     libxml2 \
     libprotobuf-cpp-full
 
+# Update engine
+PRODUCT_PACKAGES += \
+    brillo_update_payload
+
 # SdcardFS
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.sdcardfs=1
