@@ -51,16 +51,16 @@ TARGET_BOOTLOADER_BOARD_NAME := msm8953
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78af000 earlycon=msm_hsl_uart,0x78af000
-BOARD_KERNEL_BASE         := 0x80000000
-BOARD_KERNEL_IMAGE_NAME   := Image.gz-dtb
-BOARD_KERNEL_PAGESIZE     := 2048
-BOARD_KERNEL_TAGS_OFFSET  := 0x00000100
-BOARD_RAMDISK_OFFSET      := 0x01000000
-TARGET_KERNEL_ARCH        := arm64
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci androidboot.selinux=permissive
+BOARD_KERNEL_BASE := 0x80000000
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+BOARD_KERNEL_PAGESIZE := 2048
+BOARD_KERNEL_TAGS_OFFSET := 0x00000100
+BOARD_RAMDISK_OFFSET := 0x01000000
+TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE      := kernel/xiaomi/msm8953
-TARGET_KERNEL_CONFIG      := tissot_defconfig
+TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8953
+TARGET_KERNEL_CONFIG := msm_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_BUILD_VARIANT := user
 
@@ -169,7 +169,8 @@ TARGET_HW_DISK_ENCRYPTION := true
 TARGET_ANDROID_FILESYSTEM_CONFIG_H := $(DEVICE_PATH)/android_filesystem_config.h
 TARGET_USERIMAGES_USE_EXT4 := true
 
-#FM
+# FM
+AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
 BOARD_HAVE_QCOM_FM := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
 
@@ -182,6 +183,10 @@ TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
+
+# Modules
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/prebuilt/modules/pronto/pronto_wlan.ko:system/lib/modules/wlan.ko
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864

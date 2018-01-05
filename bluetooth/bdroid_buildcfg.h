@@ -17,11 +17,11 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME   "Mi A1"
+#define BTM_DEF_LOCAL_NAME        "MI A1"
 
-#define BLE_VND_INCLUDED TRUE
-#define BTA_DISABLE_DELAY 1000 /* in milliseconds */
+#define BLE_VND_INCLUDED          TRUE
+#define BLUETOOTH_QTI_SW          TRUE
+#define BT_CLEAN_TURN_ON_DISABLED TRUE
+#define MAX_ACL_CONNECTIONS       16
 
-#define BTM_WBS_INCLUDED TRUE
-#define BTIF_HF_WBS_PREFERRED TRUE
 #endif
