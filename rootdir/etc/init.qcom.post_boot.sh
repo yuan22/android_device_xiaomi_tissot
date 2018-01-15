@@ -103,7 +103,13 @@ function configure_memory_parameters() {
     # Zram disk - 512MB size
     zram_enable=`getprop ro.config.zram`
     if [ "$zram_enable" == "true" ]; then
-        echo 536870912 > /sys/block/zram0/disksize
+	if [ "$arch_type" == "aarch64" ] && [ $MemTotal -gt 3145728 ]; then
+		echo 1610612736 > /sys/block/zram0/disksize
+	elif [ "$arch_type" == "aarch64" ] && [ $MemTotal -gt 2097152 ]; then
+		echo 1073741824 > /sys/block/zram0/disksize
+	else
+		echo 536870912 > /sys/block/zram0/disksize
+	fi
         mkswap /dev/block/zram0
         swapon /dev/block/zram0 -p 32758
     fi
@@ -1177,7 +1183,7 @@ case "$target" in
                 # spill load is set to 100% by default in the kernel
                 echo 3 > /proc/sys/kernel/sched_spill_nr_run
                 # Apply inter-cluster load balancer restrictions
-                echo 1 > /proc/sys/kernel/sched_restrict_cluster_spill
+                echo 0 > /proc/sys/kernel/sched_restrict_cluster_spill
 
 
                 for devfreq_gov in /sys/class/devfreq/qcom,mincpubw*/governor
@@ -1328,8 +1334,8 @@ case "$target" in
                 echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
 
                 # SMP scheduler
-                echo 85 > /proc/sys/kernel/sched_upmigrate
-                echo 85 > /proc/sys/kernel/sched_downmigrate
+                echo 100 > /proc/sys/kernel/sched_upmigrate
+                echo 100 > /proc/sys/kernel/sched_downmigrate
                 echo 19 > /proc/sys/kernel/sched_upmigrate_min_nice
 
                 # Enable sched guided freq control

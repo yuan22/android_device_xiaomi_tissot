@@ -276,27 +276,39 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    fstab.qcom \
-    init.msm.usb.configfs.rc \
-    init.qcom.rc \
-    init.qcom.sh \
+    init.qcom.class_core.sh \
+    init.qcom.ssr.sh \
     init.qcom.sensors.sh \
-    init.qcom.usb.rc \
-    init.qcom.usb.sh \
-    init.target.rc \
     init.qcom.early_boot.sh \
-    ueventd.qcom.rc \
-    init.recovery.qcom.rc \
-    charger.fstab.qcom
+    init.qcom.syspart_fixup.sh \
+    fstab.qcom \
+    init.qcom.rc \
+    init.qcom.usb.rc \
+    init.qcom.power.rc \
+    init.qcom.usb.sh \
+    init.qcom.factory.rc \
+    init.target.rc \
+    ueventd.qcom.rc
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/init.qcom.audio.sh:system/etc/init.qcom.audio.sh \
-    $(LOCAL_PATH)/rootdir/etc/init.qcom.bt.sh:system/etc/init.qcom.bt.sh \
-    $(LOCAL_PATH)/rootdir/etc/init.qcom.efs.sync.sh:system/etc/init.qcom.efs.sync.sh \
-    $(LOCAL_PATH)/rootdir/etc/init.qcom.fm.sh:system/etc/init.qcom.fm.sh \
-    $(LOCAL_PATH)/rootdir/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
-    $(LOCAL_PATH)/rootdir/etc/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh \
-    $(LOCAL_PATH)/rootdir/etc/init.qcom.uicc.sh:system/etc/init.qcom.uicc.sh 
+PRODUCT_PACKAGES += \
+    init.qcom.wifi.sh \
+    init.ath4k.bt.sh \
+    init.qcom.uicc.sh \
+    init.qcom.efs.sync.sh \
+    init.qti.ims.sh \
+    hcidump.sh \
+    init.qcom.post_boot.sh \
+    init.qcom.fm.sh \
+    init.qcom.sdio.sh \
+    init.crda.sh \
+    qca6234-service.sh \
+    init.qcom.coex.sh \
+    init.qcom.audio.sh \
+    hsic.control.bt.sh \
+    init.qcom.bt.sh
+
+PRODUCT_PACKAGES += \
+    init.qcom.sh
 
 # RIL
 PRODUCT_PACKAGES += \
